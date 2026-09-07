@@ -1,0 +1,549 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --green: #16a34a;
+  --red: #dc2626;
+  --border: #e5e7eb;
+  --shadow: 0 8px 30px rgba(15, 23, 42, 0.07);
+}
+
+
+body {
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  background:
+    linear-gradient(
+      135deg,
+      #111827,
+      #312e81
+    );
+
+  color: white;
+  padding: 28px 5%;
+}
+
+
+.header-content {
+  max-width: 1400px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 7px;
+}
+
+
+.subtitle {
+  color: #c7d2fe;
+  font-size: 14px;
+}
+
+
+.api-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  padding: 9px 14px;
+  border-radius: 20px;
+
+  font-size: 13px;
+}
+
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #f59e0b;
+}
+
+
+.status-dot.online {
+  background: #22c55e;
+}
+
+
+.status-dot.error {
+  background: #ef4444;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  max-width: 1400px;
+  margin: 30px auto;
+
+  padding: 0 5%;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 25px;
+}
+
+
+.stat-card {
+  background: var(--card);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  padding: 20px;
+
+  box-shadow: var(--shadow);
+}
+
+
+.stat-label {
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  margin-bottom: 8px;
+}
+
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+  background: var(--card);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  padding: 18px;
+
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 22px;
+
+  box-shadow: var(--shadow);
+}
+
+
+.search {
+  flex: 1;
+  min-width: 240px;
+}
+
+
+.search input,
+select {
+  width: 100%;
+
+  height: 44px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  padding: 0 14px;
+
+  background: white;
+
+  color: var(--text);
+
+  outline: none;
+}
+
+
+.search input:focus,
+select:focus {
+  border-color: var(--primary);
+}
+
+
+select {
+  width: 180px;
+}
+
+
+button {
+  border: 0;
+
+  border-radius: 9px;
+
+  padding: 0 18px;
+
+  height: 44px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+
+.refresh-btn {
+  background: var(--primary);
+  color: white;
+}
+
+
+.refresh-btn:hover {
+  background: var(--primary-dark);
+}
+
+
+/* =========================
+   COMPARISON TABLE
+========================= */
+
+.comparison-card {
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+}
+
+
+.card-header {
+  padding: 20px;
+
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.card-header h2 {
+  font-size: 18px;
+}
+
+
+.product-count {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 900px;
+}
+
+
+th,
+td {
+  padding: 16px;
+
+  border-bottom: 1px solid var(--border);
+
+  text-align: left;
+
+  vertical-align: middle;
+}
+
+
+th {
+  background: #fafafa;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.04em;
+}
+
+
+tbody tr:hover {
+  background: #fafbff;
+}
+
+
+/* =========================
+   PRODUCT
+========================= */
+
+.product-cell {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 240px;
+}
+
+
+.product-image {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 10px;
+
+  object-fit: cover;
+
+  background: #f1f5f9;
+
+  border: 1px solid var(--border);
+}
+
+
+.product-name {
+  font-weight: 700;
+
+  margin-bottom: 4px;
+}
+
+
+.product-brand {
+  color: var(--muted);
+
+  font-size: 12px;
+
+  margin-bottom: 5px;
+}
+
+
+.price {
+  font-weight: 700;
+
+  font-size: 17px;
+}
+
+
+.rating {
+  color: #f59e0b;
+
+  font-weight: 600;
+}
+
+
+.rating-count {
+  color: var(--muted);
+
+  font-size: 12px;
+
+  margin-left: 4px;
+}
+
+
+/* =========================
+   BADGES
+========================= */
+
+.badge {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.badge.green {
+  color: #166534;
+  background: #dcfce7;
+}
+
+
+.badge.red {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+
+.badge.blue {
+  color: #3730a3;
+  background: #e0e7ff;
+}
+
+
+/* =========================
+   BEST VALUE
+========================= */
+
+.best-value {
+  background: #f0fdf4 !important;
+}
+
+
+.best-value td:first-child {
+  border-left: 4px solid var(--green);
+}
+
+
+/* =========================
+   STATES
+========================= */
+
+.empty,
+.loading,
+.error {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  color: var(--muted);
+}
+
+
+.error {
+  color: var(--red);
+}
+
+
+.loader {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid #e5e7eb;
+
+  border-top-color: var(--primary);
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+
+  margin: 0 auto 12px;
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .header-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+
+  .header h1 {
+    font-size: 23px;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .refresh-btn {
+    width: 100%;
+  }
+
+}
