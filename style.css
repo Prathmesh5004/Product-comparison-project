@@ -1,0 +1,1082 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --primary: #635bff;
+    --primary-dark: #5148e5;
+    --background: #f5f6fa;
+    --card: #ffffff;
+    --text: #18181b;
+    --muted: #71717a;
+    --border: #e4e4e7;
+    --green: #16a34a;
+    --orange: #f59e0b;
+    --red: #ef4444;
+    --shadow: 0 10px 30px rgba(24, 24, 27, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+    background: var(--background);
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    min-height: 78px;
+    padding: 0 5%;
+
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    color: white;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.brand h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+}
+
+.brand h1 span {
+    color: var(--primary);
+}
+
+.brand p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.header-actions {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1400px, 90%);
+    margin: 0 auto;
+
+    padding: 40px 0 110px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #1d1b4b,
+        #37328a
+    );
+
+    border-radius: 20px;
+
+    padding: 42px 48px;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    color: #a8a4ff;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.hero h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(32px, 4vw, 52px);
+
+    line-height: 1.05;
+
+    margin: 12px 0;
+}
+
+.hero p {
+    color: #d4d2f6;
+
+    max-width: 550px;
+
+    line-height: 1.6;
+}
+
+.hero-stat {
+    min-width: 190px;
+
+    padding: 24px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.hero-stat strong {
+    display: block;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 38px;
+}
+
+.hero-stat span {
+    color: #d4d2f6;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 14px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 220px 220px;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-box {
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding: 0 14px;
+
+    background: white;
+}
+
+.search-box:focus-within {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 91, 255, 0.1);
+}
+
+.search-box span {
+    font-size: 24px;
+
+    color: var(--muted);
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 14px;
+
+    color: var(--text);
+}
+
+.controls select {
+    height: 46px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding: 0 12px;
+
+    background: white;
+
+    color: #333;
+
+    outline: none;
+}
+
+.controls select:focus {
+    border-color: var(--primary);
+}
+
+
+/* =========================
+   SIMILAR PRODUCTS POPUP
+========================= */
+
+.similar-popup {
+    position: absolute;
+
+    top: 54px;
+
+    left: 0;
+
+    width: 100%;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, 0.14);
+
+    z-index: 50;
+
+    overflow: hidden;
+}
+
+.popup-header {
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 13px;
+}
+
+.popup-header button {
+    width: 28px;
+    height: 28px;
+
+    border: none;
+
+    background: #f4f4f5;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+
+    color: var(--muted);
+}
+
+.popup-header button:hover {
+    background: #e4e4e7;
+}
+
+.similar-item {
+    padding: 10px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    transition: background 0.15s;
+}
+
+.similar-item:hover {
+    background: #f7f7ff;
+}
+
+.similar-item img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    background: #f7f7f8;
+
+    border-radius: 7px;
+}
+
+.similar-info {
+    min-width: 0;
+}
+
+.similar-name {
+    font-weight: 600;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.similar-price {
+    color: var(--primary);
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+.similar-empty {
+    padding: 20px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.section-heading h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 24px;
+}
+
+.section-heading p,
+#resultsText {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+#resultsText {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.product-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+.product-card.selected {
+    border: 2px solid var(--primary);
+
+    box-shadow:
+        0 8px 25px
+        rgba(99, 91, 255, 0.15);
+}
+
+
+/* Product Image */
+
+.product-image {
+    height: 210px;
+
+    background: #f7f7f8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+.product-image img {
+    width: 80%;
+    height: 80%;
+
+    object-fit: contain;
+
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover
+.product-image img {
+    transform: scale(1.04);
+}
+
+
+/* Discount */
+
+.discount {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* Compare Checkbox */
+
+.compare-check {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 31px;
+    height: 31px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.compare-check:hover {
+    border-color: var(--primary);
+
+    color: var(--primary);
+}
+
+.compare-check.active {
+    background: var(--primary);
+
+    color: white;
+
+    border-color: var(--primary);
+}
+
+
+/* Product Info */
+
+.product-info {
+    padding: 18px;
+}
+
+.category {
+    color: var(--primary);
+
+    text-transform: uppercase;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+}
+
+.product-name {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.25;
+
+    margin: 7px 0;
+
+    min-height: 43px;
+}
+
+.description {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    height: 38px;
+
+    overflow: hidden;
+
+    margin-bottom: 12px;
+}
+
+.rating-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}
+
+.stars {
+    color: var(--orange);
+
+    letter-spacing: 1px;
+}
+
+.rating-count {
+    color: var(--muted);
+}
+
+.price-row {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 8px;
+}
+
+.price {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+.stock {
+    font-size: 11px;
+
+    color: var(--green);
+}
+
+.stock.low {
+    color: var(--orange);
+}
+
+
+/* =========================
+   FLOATING COMPARE BUTTON
+========================= */
+
+.floating-compare {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 90;
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 14px 20px;
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(99, 91, 255, 0.35);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.floating-compare:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+.floating-compare strong {
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    padding: 3px 8px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--muted);
+}
+
+.spinner {
+    width: 38px;
+    height: 38px;
+
+    border: 4px solid #e5e7eb;
+
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   ERROR / EMPTY
+========================= */
+
+.error,
+.empty {
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.error h3,
+.empty h3 {
+    margin: 10px 0;
+}
+
+.error p,
+.empty p {
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+.error button {
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+.error button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(15, 15, 30, 0.65);
+
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+
+    width: min(1100px, 100%);
+
+    max-height: 90vh;
+
+    overflow: auto;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    z-index: 2;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: start;
+
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 30px;
+
+    margin-top: 5px;
+}
+
+.close-btn {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    color: var(--muted);
+
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    background: #f4f4f5;
+
+    color: var(--text);
+}
+
+
+/* =========================
+   COMPARISON TABLE
+========================= */
+
+.comparison-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid var(--border);
+
+    padding: 16px;
+
+    text-align: left;
+
+    vertical-align: top;
+}
+
+.comparison-table th {
+    background: #fafafa;
+
+    width: 150px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.compare-product-image {
+    width: 120px;
+
+    height: 100px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+.compare-product-name {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+.best {
+    color: var(--green);
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   UTILITY
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .product-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .header {
+        padding: 15px 5%;
+    }
+
+    .hero {
+        padding: 30px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .hero-stat {
+        width: 100%;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .brand p {
+        display: none;
+    }
+
+    .brand h1 {
+        font-size: 17px;
+    }
+
+    .container {
+        width: 94%;
+
+        padding-top: 20px;
+    }
+
+    .hero {
+        border-radius: 14px;
+
+        padding: 25px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .section-heading h3 {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        padding: 18px;
+    }
+
+    .comparison-table {
+        min-width: 650px;
+    }
+
+    .floating-compare {
+        right: 15px;
+
+        bottom: 15px;
+
+        padding: 12px 16px;
+    }
+
+}

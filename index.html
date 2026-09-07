@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ProductCompare - Electronics</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="brand">
+
+        <div class="brand-icon">P</div>
+
+        <div>
+            <h1>Product<span>Compare</span></h1>
+            <p>Smart electronics comparison dashboard</p>
+        </div>
+
+    </div>
+
+    <div class="header-actions">
+        <span id="productCount">0 Products</span>
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+
+            <span class="eyebrow">
+                ELECTRONICS DISCOVERY
+            </span>
+
+            <h2>
+                Find the right<br>
+                electronics for you.
+            </h2>
+
+            <p>
+                Search, filter and compare electronics
+                side-by-side with prices displayed in INR.
+            </p>
+
+        </div>
+
+
+        <div class="hero-stat">
+
+            <strong id="heroProductCount">
+                0
+            </strong>
+
+            <span>
+                Electronics available
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTROLS -->
+
+    <section class="controls">
+
+        <div class="search-wrapper">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search electronics..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- SIMILAR PRODUCTS POPUP -->
+
+            <div
+                id="similarPopup"
+                class="similar-popup hidden"
+            >
+
+                <div class="popup-header">
+
+                    <strong>
+                        Similar items
+                    </strong>
+
+                    <button id="closePopup">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <div id="similarProducts"></div>
+
+            </div>
+
+        </div>
+
+
+        <select id="categoryFilter">
+
+            <option value="all">
+                All Categories
+            </option>
+
+        </select>
+
+
+        <select id="sortFilter">
+
+            <option value="default">
+                Sort By
+            </option>
+
+            <option value="price-low">
+                Price: Low to High
+            </option>
+
+            <option value="price-high">
+                Price: High to Low
+            </option>
+
+            <option value="rating-high">
+                Rating: Highest
+            </option>
+
+            <option value="rating-low">
+                Rating: Lowest
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <div>
+
+                <h3>
+                    Electronics
+                </h3>
+
+                <p>
+                    Select exactly two products to compare.
+                </p>
+
+            </div>
+
+
+            <span id="resultsText">
+                Loading...
+            </span>
+
+        </div>
+
+
+        <!-- LOADING -->
+
+        <div
+            id="loading"
+            class="loading"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Loading electronics...
+            </p>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="errorMessage"
+            class="error hidden"
+        >
+
+            <h3>
+                Something went wrong
+            </h3>
+
+            <p>
+                Unable to load products from the API.
+            </p>
+
+            <button id="retryBtn">
+                Try Again
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+
+        <div
+            id="productGrid"
+            class="product-grid"
+        ></div>
+
+
+        <!-- EMPTY -->
+
+        <div
+            id="emptyState"
+            class="empty hidden"
+        >
+
+            <div>🔎</div>
+
+            <h3>
+                No electronics found
+            </h3>
+
+            <p>
+                Try another search or category.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FLOATING COMPARE BUTTON -->
+
+<button
+    id="floatingCompareBtn"
+    class="floating-compare"
+>
+
+    <span>
+        Compare
+    </span>
+
+    <strong id="compareCount">
+        0 / 2
+    </strong>
+
+</button>
+
+
+<!-- COMPARISON MODAL -->
+
+<div
+    id="comparisonModal"
+    class="modal hidden"
+>
+
+    <div class="modal-overlay"></div>
+
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    COMPARISON
+                </span>
+
+                <h2>
+                    Compare Products
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="comparisonContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
